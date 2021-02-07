@@ -1,0 +1,71 @@
+#items{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+#items img{
+    width: 300px;
+    margin-left: 50px;
+    margin-top: 30px;
+
+}
+#items h2{
+    color:brown;
+    margin-left: 50px;
+
+}
+#inputValue{
+    width: 400px;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+#button{
+    width: 100px;
+    height: 40px;
+    background-color:teal;
+    border-radius: 10px;
+    color: white;
+    margin-left: 20px;
+
+}
+#inputSection{
+    margin-left: 33%;
+    margin-top: 100px;
+}
+.error-handle{
+    text-align: center;
+    color: red;
+    font-size: 25px;
+    margin-left: 500px;
+    display: flex;
+    flex-direction: row;
+
+
+}
+#details img{
+    width: 35%;
+
+}
+#details ul{
+    margin-left: 40%;
+}
+#details ul li{
+    margin-left: 20px;
+}
+#details{
+    width: 90%;
+    height: 450px;
+    border-radius: 10px;
+    padding: 10px;
+    display: none;
+
+}
+.foodItems{
+    background-color: whitesmoke;
+    border-radius: 10px;
+    padding: 10px;
+    
+}
+
