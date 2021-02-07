@@ -21,7 +21,9 @@ body{
 #mainDiv h2{
     color:brown;
     margin-left: 50px;
-
+}
+#mainDiv a{
+    text-decoration: none;
 }
 #inputValue{
     width: 400px;
