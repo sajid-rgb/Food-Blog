@@ -18,11 +18,11 @@ const searchButtonClick = () => {
             }
             else {
                 meals.forEach(foodItem => {
-                    const Id = foodItem.idMeal;
+                    const idMeal = foodItem.idMeal;
                     const newDiv = document.createElement("div");
                     detailSectionHide("details", "none");
                     detailSectionHide("errorSection", "none");
-                    const searchResult = `<a href="#details"><div class="foodItems" onclick="mealDetail(${Id})"><img src="${foodItem.strMealThumb}" > 
+                    const searchResult = `<a href="#details"><div class="foodItems" onclick="mealDetail(${idMeal})"><img src="${foodItem.strMealThumb}" > 
              <h2>${foodItem.strMeal}</h2></div></a>
              `;
                     newDiv.innerHTML = searchResult;
@@ -40,17 +40,16 @@ const mealDetail = foodId => {
             details.style.display = "block";
             details.innerHTML = "";
             const mealDetails = mealItem[0];
-            const mealDiv = `<div class="image-ingredients">
+            const mealSection = `<div class="image-ingredients">
             <img src="${mealDetails.strMealThumb}">
             <h1>${mealDetails.strMeal}</h1>
                 <h3>Ingredients</h3>
                 </div>`;
-            details.innerHTML = mealDiv;
-            const s = Object.keys(mealDetails);
+            details.innerHTML = mealSection;
             let i = 1;
             Object.keys(mealDetails).forEach(key => {
                 const detailList = document.createElement("ul")
-                if (key == "strIngredient" + i) {
+                if (key === "strIngredient" + i) {
                     if (mealDetails[key] != null && mealDetails[key] != "") {
                         const detailsData = `
                 <li>${mealDetails[key]}</li>`;
