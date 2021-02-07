@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,17 +8,22 @@
     <link rel="stylesheet" href="style.css">
     <title>Khida Lagse</title>
 </head>
+
 <body>
     <header class="introduction">
-        <h1>Welcome to World N0.1 Food Center</h1>
+        <h1>Welcome to Worlds N0.1 Food Center</h1>
         <h3>Search your favorite food any time</h3>
     </header>
     <section id="inputSection"><input type="text" placeholder="&#128270 Enter your favorite food name" id="inputValue"
             value=""><button id="button" onclick="searchButtonClick()">Search</button></section>
+    <section id="errorSection">
+        <h2>Ups, Sorry your food is not in our storage.</h2>
+    </section>
     <section id="details">
     </section>
     <main id="mainDiv"></main>
     <section id="Error"></section>
     <script src="main.js"></script>
 </body>
+
 </html>

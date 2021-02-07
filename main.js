@@ -10,14 +10,16 @@ const searchButtonClick = () => {
                 alert("Please Enter your Food Name")
             }
             else if (meals === null) {
-                alert("Not Found your Favorite food");
+                const errorSection = document.getElementById("errorSection");
+                errorSection.style.display = 'block'
                 document.getElementById("details").style.display = "none"
             }
             else {
                 meals.forEach(foodItem => {
                     const Id = foodItem.idMeal;
                     const newDiv = document.createElement("div");
-                    document.getElementById("details").style.display = "none"
+                    document.getElementById("details").style.display = "none";
+                    errorSection.style.display = 'none';
                     const searchResult = `<a href="#details"><div class="foodItems" onclick="mealDetail(${Id})"><img src="${foodItem.strMealThumb}" > 
              <h2>${foodItem.strMeal}</h2></div></a>
              `
