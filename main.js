@@ -9,7 +9,7 @@ const searchButtonClick = () => {
             if (inputValue === "") {
                 alert("Please Enter your Food Name");
                 detailSectionHide("errorSection", "none");
-                detailSectionHide("details", "none")
+                detailSectionHide("details", "none");
             }
             else if (meals === null) {
                 const errorSection = document.getElementById("errorSection");
@@ -26,7 +26,7 @@ const searchButtonClick = () => {
              <h2>${foodItem.strMeal}</h2></div></a>
              `;
                     newDiv.innerHTML = searchResult;
-                    mainDiv.appendChild(newDiv)
+                    mainDiv.appendChild(newDiv);
                 });
             }
         })
