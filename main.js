@@ -1,6 +1,7 @@
+const url ="https://www.themealdb.com/api/json/v1/1/"
 const searchButtonClick = () => {
     const inputValue = document.getElementById("inputValue").value;
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${inputValue}`)
+    fetch(`${url}search.php?s=${inputValue}`)
         .then(res => res.json())
         .then(data => {
             const mainDiv = document.getElementById("mainDiv");
@@ -32,7 +33,7 @@ const searchButtonClick = () => {
         })
 }
 const mealDetail = foodId => {
-    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${foodId}`)
+    fetch(`${url}lookup.php?i=${foodId}`)
         .then(res => res.json())
         .then(data => {
             const mealItem = data.meals;
@@ -47,25 +48,25 @@ const mealDetail = foodId => {
                 </div>`;
             details.innerHTML = mealSection;
             let i = 1;
-            Object.keys(mealDetails).forEach(key => {
-                const detailList = document.createElement("ul")
-                if (key === "strIngredient" + i) {
-                    if (mealDetails[key] != null && mealDetails[key] != "") {
-                        const detailsData = `
-                <li>${mealDetails[key]}</li>`;
-                        detailList.innerHTML = detailsData;
-                        details.appendChild(detailList);
-                    }
-                    i++;
+            while(i <=20) {
+                const mealIngredients = mealDetails[`strIngredient${i}`];
+                const measure = mealDetails[`strMeasure${i}`];
+                if (measure != "" && mealIngredients != "") {
+                    const detailList = document.createElement("ul");
+                    const detailsData = `
+                 <li> ${measure} ${mealIngredients}</li>`;
+                    detailList.innerHTML = detailsData;
+                    details.appendChild(detailList);
                 }
-            })
+                i++;
+            }
         })
 }
 function detailSectionHide(id, value) {
-    if (id == ("details")) {
+    if (id === ("details")) {
         document.getElementById(id).style.display = value;
     }
-    if (id == ("errorSection")) {
+    if (id === ("errorSection")) {
         document.getElementById(id).style.display = value;
     }
 }
