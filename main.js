@@ -18,8 +18,8 @@ const searchButtonClick = () => {
                     const Id = foodItem.idMeal;
                     const newDiv = document.createElement("div");
                     document.getElementById("details").style.display = "none"
-                    const searchResult = `<div class="foodItems"><a href="#details"><img src="${foodItem.strMealThumb}" onclick="mealDetail(${Id})"> </a>
-             <h2>${foodItem.strMeal}</h2></div>
+                    const searchResult = `<a href="#details"><div class="foodItems" onclick="mealDetail(${Id})"><img src="${foodItem.strMealThumb}" > 
+             <h2>${foodItem.strMeal}</h2></div></a>
              `
                     newDiv.innerHTML = searchResult;
                     mainDiv.appendChild(newDiv)
