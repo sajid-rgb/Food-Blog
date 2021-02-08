@@ -1,4 +1,4 @@
-const url ="https://www.themealdb.com/api/json/v1/1/"
+const url = "https://www.themealdb.com/api/json/v1/1/"
 const searchButtonClick = () => {
     const inputValue = document.getElementById("inputValue").value;
     fetch(`${url}search.php?s=${inputValue}`)
@@ -48,10 +48,10 @@ const mealDetail = foodId => {
                 </div>`;
             details.innerHTML = mealSection;
             let i = 1;
-            while(i <=20) {
+            while (i <= 20) {
                 const mealIngredients = mealDetails[`strIngredient${i}`];
                 const measure = mealDetails[`strMeasure${i}`];
-                if (measure != "" && mealIngredients != "") {
+                if (measure != "" && mealIngredients != "" && measure != null && mealIngredients != null) {
                     const detailList = document.createElement("ul");
                     const detailsData = `
                  <li> ${measure} ${mealIngredients}</li>`;
@@ -62,11 +62,11 @@ const mealDetail = foodId => {
             }
         })
 }
-function detailSectionHide(id, value) {
-    if (id === ("details")) {
+const detailSectionHide = (id, value) => {
+    if (id === "details") {
         document.getElementById(id).style.display = value;
     }
-    if (id === ("errorSection")) {
+    if (id === "errorSection") {
         document.getElementById(id).style.display = value;
     }
 }
