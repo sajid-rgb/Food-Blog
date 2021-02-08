@@ -1,4 +1,5 @@
-const url = "https://www.themealdb.com/api/json/v1/1/"
+const url = "https://www.themealdb.com/api/json/v1/1/";
+//This function will execute when someone click search button
 const searchButtonClick = () => {
     const inputValue = document.getElementById("inputValue").value;
     fetch(`${url}search.php?s=${inputValue}`)
@@ -32,6 +33,7 @@ const searchButtonClick = () => {
             }
         })
 }
+//This function will execute when someone click on food image div
 const mealDetail = foodId => {
     fetch(`${url}lookup.php?i=${foodId}`)
         .then(res => res.json())
@@ -62,6 +64,7 @@ const mealDetail = foodId => {
             }
         })
 }
+//This function use for hide error section and detail section
 const detailSectionHide = (id, value) => {
     if (id === "details") {
         document.getElementById(id).style.display = value;
